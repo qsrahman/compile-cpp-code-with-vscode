@@ -34,7 +34,7 @@ EXEC=demo
 C_OBJECTS=$(patsubst $(SRCDIR)/%.c,$(BUILDDIR)/%.o,$(wildcard $(SRCDIR)/*.c))
 CXX_OBJECTS=$(patsubst $(SRCDIR)/%.cpp,$(BUILDDIR)/%.o,$(wildcard $(SRCDIR)/*.cpp))
 
-all: $(BUILDDIR)/$(EXEC)
+all: dir $(BUILDDIR)/$(EXEC)
 
 $(BUILDDIR)/$(EXEC): $(CXX_OBJECTS) $(C_OBJECTS)
 	$(CXX) $(LDFLAGS) $(CXX_OBJECTS) $(C_OBJECTS) -o $@
